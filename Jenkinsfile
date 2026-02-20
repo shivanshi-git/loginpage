@@ -15,9 +15,17 @@ pipeline {
             }
         }
 
+        stage('Docker Sanity Check') {
+            steps {
+                bat 'docker version'
+                bat 'docker info'
+                bat 'docker ps'
+            }
+        }
+
         stage('Build & Deploy') {
             steps {
-                bat 'docker-compose down || exit 0'
+                bat 'docker-compose down || exit /b 0'
                 bat 'docker-compose up -d --build'
             }
         }
@@ -25,7 +33,7 @@ pipeline {
         stage('Health Check') {
             steps {
                 bat 'ping 127.0.0.1 -n 11 > nul'
-                bat 'curl -f http://localhost:3000/health || exit 1'
+                bat 'curl -f http://localhost:3000/health || exit /b 1'
             }
         }
     }
