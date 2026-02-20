@@ -26,6 +26,14 @@ A simple, clean login & signup application with **MongoDB**, **Google OAuth**, *
 - Jenkins CI/CD pipeline
 - Health check endpoint (`/health`)
 
+
+
+
+
+
+
+
+
 ---
 
 ## Quick Start (Local)
