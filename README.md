@@ -10,6 +10,7 @@ A simple, clean login & signup application with **MongoDB**, **Google OAuth**, *
 
 ## Features
 
+
 - Email & password signup / login
 - Google OAuth 2.0 login
 - Session-based authentication (stored in MongoDB)
